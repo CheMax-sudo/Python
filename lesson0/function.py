@@ -270,17 +270,45 @@ def calculate(num1, operator, num2):
        print('Неверная операция!')
     return result
 
-num1 = int(input("Введите число:"))
-operator = input("Введите операцию:")
-num2 = int(input("Введите число:"))
+#num1 = int(input("Введите число:"))
+#operator = input("Введите операцию:")
+#num2 = int(input("Введите число:"))
 
-res = calculate(num1, operator, num2)
+#res = calculate(num1, operator, num2)
+#print(res)  
+            
+#====================================================== Пузырьковая сортировка
 
-print(res)
-      
-                  
+def sort_list(list):
+    n = len(list)
+    tmp = 0
+    j = 1
+    for i in range(int(n)):
+        for j in range(n-i):
+            if list[i]>list[n-j-1]:
+                tmp = list[i]
+                list[i] = list[n-j-1]
+                list[n-j-1] = tmp
+    return list
 
+#====================================================== Функция sorted() возвращает новый отсортированный список
 
+str1 = "hello" 
+list1 = ['one', 'two', 'list', '', 'dict']
+tuple1 = (15, 3, 5, 7, 9, 11, 42)
+tuple1 = [(1, 2), (11, 12), (0, 2), (3, 2)]
+set1 = {1, 4, 3, 6, 2, 8, 11, 32}
+dict1 = {2: 'red', 1: 'green', 3: 'blue'}
+
+result = sorted(list1) # Сортирует в порядке возростания
+result2 = sorted(list1, reverse=True) # Сортирует в порядке убвания
+result3 = sorted(list1, key=len) # Сортирует с параметром key= функция с помощью которой выполниться сравнение
+result4 = sorted(d1) # Вернется список отсортированных ключей
+result5 = sorted(d1.values()) # Вернется список отсортированных значений
+result6 = sorted(d1.values(), reverse=True) #Вернется список отсортированных значений c реверсом
+result7 = sorted(d1.items()) # Вернется список кортежей (ключ, значение), отсортированный по ключам.
+
+print(result7)
     
  
                     
